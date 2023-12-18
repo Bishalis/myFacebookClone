@@ -1,0 +1,44 @@
+.RightNavIcons{
+    display: grid;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: rgb(228, 230, 229);
+    place-items: center;
+    border-radius: 50%;
+    
+}
+
+.rightNavIcon{
+    height: 2rem;
+    width: 2rem;
+}
+
+.RightNavIcons:hover{
+    background-color: rgb(194, 194, 194);
+}
+    
+
+@media  screen and (max-width : 640px){
+
+ .RightNavIcons{
+    display: none;
+ }
+    
+
+
+}
+
+.dropDownSearch{
+    height: 60vh;
+    width: max-content;
+    position: absolute;
+    background-color:white;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    /* box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 10px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}

@@ -1,0 +1,23 @@
+.centerDivIcons{
+    height: 3rem;
+    width:6rem;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    margin: auto;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.centerDivIcons:hover{
+    background-color: rgb(228, 230, 229);
+}
+.centerIcon{
+    height: 2rem;
+    width: 2rem;
+    color: rgb(70, 70, 70);
+}
+

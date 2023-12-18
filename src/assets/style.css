@@ -1,0 +1,133 @@
+
+
+*{
+    font-family: ubuntu;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* making whole body to the center */
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    background-image:url(/day-97453_640.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+#container{
+    height: 80vh;
+    /* margin: 0 auto; */
+    width: 80%;
+    border-radius: 10px;
+    background-color: rgb(238, 225, 225);
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+
+.wheatherInfo{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+
+}
+ .vector{
+    height: 10rem;
+    width: 10rem;
+
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.fa-plus{
+    cursor: pointer;
+}
+
+.addLocation{
+    /* display: flex; */
+    display: block;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    /* margin: 10px; */
+    width: 60%;
+    background-color: aliceblue; 
+    min-height: 80%;
+    /* position: relative; */
+    top: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 10px;
+    transition: 0.2 ease-in-out;
+    display: none;
+}
+
+.submit{
+  
+    background:linear-gradient(#19d341, #35e174) ;
+    font-weight:bold;
+    font-stretch:extra-expanded;
+    width: 20%;
+    height: 10%;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+   text-align: center;
+   color: rgb(253, 245, 245);
+   /* margin-left: 10px; */
+/* position: absolute; */
+  
+}
+
+.locationTxt{
+width: 60%;
+height: 10%;
+/* position: absolute; */
+margin: 10px;
+padding: 5px;
+}
+
+@media only screen and (max-width: 745px) {
+    body {
+        font-size: smaller;
+    }
+
+    .wheatherInfo{
+        margin-top: 20%;
+    }
+
+    
+  }
+
+  @media only screen and (max-width: 450px) {
+   .submit{
+    width: 50%;
+   }
+
+    
+  }
+
+
+ 
+
+
+  
+

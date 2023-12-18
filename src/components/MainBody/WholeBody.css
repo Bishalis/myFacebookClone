@@ -1,0 +1,42 @@
+
+.wholeBodyDiv{
+    width:100%;
+    display: grid;
+    grid-template-columns:25% 50% 25%;
+    top: 4.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.leftBodyDiv,.rightBodyDiv,.centerBodyDiv{
+    text-align: center;
+}
+
+
+
+@media(max-width:1400px){
+    .wholeBodyDiv{
+        grid-template-columns: 70% 30%;
+    }
+
+    .leftBodyDiv{
+        display: none;
+        transform: translateY(-100%);
+    }
+    .rightBodyDiv{
+        width: 90%;
+    }
+}
+
+@media(max-width:1200px){
+    .wholeBodyDiv{
+        grid-template-columns: 100%;
+    }
+
+    .rightBodyDiv{
+        display: none;
+
+    }
+
+}

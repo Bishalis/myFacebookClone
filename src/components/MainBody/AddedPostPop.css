@@ -1,0 +1,54 @@
+.addedPostPopContainer{
+    height: max-content;
+    width: 60vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 15rem;
+    right: 20vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+    border-radius: 10px;
+}
+
+.addPostHeader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px;
+    gap: 30%;
+    border-bottom: 1px solid rgb(210, 207, 207);
+}
+
+.addPostHeader>h1{
+    font-size: xx-large
+}
+.addPostClose{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.addPostClose:hover{
+    background-color: rgb(188, 190, 191);
+}
+
+.addPostInput{
+    width: 90%;
+    outline: none;
+    margin: 10px;
+    font-size: xx-large;
+}
+
+.addPostSubmitButton{
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    top: 10rem;
+}
+
+
+.addGallery{
+    height: 100px;
+    width: 100px;
+}

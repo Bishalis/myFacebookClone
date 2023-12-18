@@ -1,0 +1,56 @@
+.postProfile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.mainPostContainer{
+    width: 100%;
+    margin-top: 5rem;
+    height: max-content;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+.topMainpost{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.postCaption{
+    font-size: 2rem;
+    /* position: absolute; */
+}
+
+.mainPostProfileName{
+    font-size: x-large;
+}
+
+.mainPostProfileTime{
+    font-size: larger;
+    color: rgb(115, 122, 128);
+}
+
+
+.mainPostRightIcon{
+    height: 30px;
+    width: 30px;
+}
+
+.mainPostRight{
+    display: flex;
+    gap: 20px;
+}
+
+.mainPostLeft{
+    display: flex;
+    gap: 20px;
+}
+
+.postImage{
+    width: 100%;
+    max-height: 500px;
+    min-height: max-content;
+}

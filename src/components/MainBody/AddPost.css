@@ -1,0 +1,89 @@
+.profileDiv{
+    height: 50px;
+    width: 50px;
+    align-items: center;
+}
+
+.postProfileImg{
+    border-radius: 50%;
+    margin: 15px;
+}
+
+.addPostContainer{
+    width: 100%;
+    height: 15rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+    
+}
+
+
+.topPostSection{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profileInput{
+    background-color: rgb(222, 225, 225);
+    margin: 15px;
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    text-align: start;
+
+}
+
+.profileInputBtn{
+    margin: 5px;
+    margin-left: 20px;
+    font-size: x-large;
+    color: rgb(158, 158, 158);
+    cursor: pointer;
+}
+
+
+.bottomPostSection{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border-top: 1px solid rgb(180, 177, 177);
+}
+
+
+.bottomPostDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.bottomPostDiv:hover{
+    background-color: rgb(227, 227, 227);
+    border-radius: 10px;
+}
+
+.bottomPostText{
+    font-size: x-large;
+}
+
+.bottomPostIcon{
+    height: 30px;
+    width: 30px;
+}
+
+
+
+
+.bottomPostSmile{
+    color: rgb(220, 172, 96);
+}
+
+
+.bottomPostLive{
+    color: rgb(217, 62, 1);
+}
+

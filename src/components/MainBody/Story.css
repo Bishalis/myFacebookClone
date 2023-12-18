@@ -1,0 +1,35 @@
+.Story{
+    height: 20rem;
+    width: 13rem;
+    margin: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 10px;
+    position: relative;
+}
+
+.Story:hover{
+   opacity: 1;
+}
+
+
+.profile-img-story{
+    left: 0;
+    top: 0;
+    margin: 10px;
+    border: 5px solid blue;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+.story-title{
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    left: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+
