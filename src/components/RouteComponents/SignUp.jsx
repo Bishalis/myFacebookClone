@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../modules/base";
+import "./SignUp.css"
 const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -22,9 +23,9 @@ const SignUp = () => {
       });
   };
   return (
+   <div className="signUpPage">
     <div className="signUpContainer">
       <form className="signUpForm">
-
         <input
         className="signUpEmailInput"
           name="email"
@@ -36,6 +37,7 @@ const SignUp = () => {
           required
         />
         <input
+        className="signUpPasswordInput"
         autoComplete="password"
           name="password"
           type="password"
@@ -44,15 +46,16 @@ const SignUp = () => {
           placeholder="Enter the password"
           required
         />
-        <button type="submit" onClick={onSubmit}>
+        <button type="submit" onClick={onSubmit} className="signUpSubmitBtn">
           SignUp
         </button>
       </form>
       <p>
         Already have account?{''}
-        <NavLink to="/login">Sign in</NavLink>
+        <NavLink to="/login" style={{color:"blue",textDecoration:"underline"}}>Sign in</NavLink>
       </p>
     </div>
+   </div>
   );
 };
 

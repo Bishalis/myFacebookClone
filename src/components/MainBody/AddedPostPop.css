@@ -1,6 +1,7 @@
 .addedPostPopContainer{
     height: max-content;
-    width: 60vw;
+    width: 37rem;
+    max-width: 50rem;
     background-color: rgb(255, 255, 255);
     position: fixed;
     top: 15rem;

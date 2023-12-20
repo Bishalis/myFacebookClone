@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export const PostContext = createContext();
 function Home() {
-
   // storing the user info when mounted
     useEffect(()=>{
      onAuthStateChanged(auth,(user)=>{
@@ -53,6 +52,7 @@ function Home() {
   };
 
   // adding the post 
+  const [image,setImage] = useState("");
   function onSubmitPostHandler(e) {
     e.preventDefault();
     if (caption === "") {
@@ -60,22 +60,20 @@ function Home() {
     } else {
       setPosts((currentPost) => [
         ...currentPost,
-        { keyId: keyId, caption: caption },
+        { keyId: keyId, caption: caption ,image:image},
       ]);
       updatingKeyId();
       console.log(posts);
       setIsPostPopAdded(false)
       setCaption("");
+      setImage("")
     }
   }
 
 
-  const [image,setImage] = useState("");
   function fileSelectHandler(e){
-    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
   }
-
 
 
   
@@ -92,6 +90,7 @@ function Home() {
           handleDeletePost,
           fileSelectHandler,
           image,
+          setImage
         }}
       >
         <NavigationBar toggleHamburgerMenu={toggleHamburgerMenu} handleLogout={handleLogout}/>

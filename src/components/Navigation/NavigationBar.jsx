@@ -13,42 +13,59 @@ import { Logout } from "@mui/icons-material";
 import { Login } from "@mui/icons-material";
 import "./NavigationBar.css";
 import { useState } from "react";
+import axios from "axios";
 import { FaArrowRight } from "react-icons/fa6";
 import RightDivIcons from "./RightDivIcons";
 import { NavLink } from "react-router-dom";
 function NavigationBar({ toggleHamburgerMenu, handleLogout }) {
   const [searchClass, setSearchClass] = useState(false);
-  const [history, setHistory] = useState("");
+  const [history, setHistory] = useState([]);
   const [dropDown, setDropDown] = useState("mainSearchBox");
   const [setting, setSetting] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
   function searchHandleClick() {
     setSearchClass(true);
   }
+
   function removeSearchHandleClick() {
     setSearchClass(false);
+    setSearchInput("")
     // console.log(searchClass);
   }
 
   // setting hamburger menu for small screen
 
   useEffect(() => {
-    recover();
-  }, [history]);
+    if(searchInput !==""){
+       axios.get(`http://api.tvmaze.com/search/shows?q=${searchInput}`)
+       .then(res =>{
+        console.log(res.data)
+        setHistory(res.data);
+       })
+    }
+  }, [searchInput]);
 
-  function recover() {
-    let data = localStorage.getItem("userHistory");
-    let parsedData = JSON.parse(data);
-    setHistory(() => parsedData);
-    // console.log(parsedData);
-  }
+  // function recover() {
+  //   let data = localStorage.getItem("userHistory");
+  //   let parsedData = JSON.parse(data);
+  //   setHistory(() => parsedData);
+  //   // console.log(parsedData);
+  // }
 
-  function saveToStorage(history) {
-    localStorage.setItem("userHistory", JSON.stringify(history));
-  }
+  // function saveToStorage() {
+  //   let history = history ? history : { history: [] };
+  //   history.history.push({ text: searchInput });
+  //   localStorage.setItem("userHistory", JSON.stringify(searchInput));
+  // }
+
+  const onChangeHandler = e => {
+    setSearchInput(e.target.value);
+  };
+
 
   return (
     <>
-      <div className="wholeNavBar" style={{backgroundColor:""}}>
+      <div className="wholeNavBar" style={{ backgroundColor: "" }}>
         <div className="leftNav">
           <BsFacebook className="facebookIcon " />
           <div className={!searchClass ? { dropDown } : "dropDownSearch"}>
@@ -61,13 +78,14 @@ function NavigationBar({ toggleHamburgerMenu, handleLogout }) {
               }
               onClick={() => removeSearchHandleClick()}
             />
-            <div className="searchBox">
+
+            <form className="searchBox" autoComplete="off">
               <input
-              name="search"
-                autoComplete="on"
+                name="search"
                 placeholder="Search"
-                onChange={(e) => saveToStorage(e.target.value)}
-                className="navSearchField "
+                value={searchInput}
+                onChange={onChangeHandler}
+                className="navSearchField"
                 style={
                   searchClass
                     ? { display: "block", transition: " 2ms ease-in-out" }
@@ -84,11 +102,24 @@ function NavigationBar({ toggleHamburgerMenu, handleLogout }) {
                     : () => removeSearchHandleClick()
                 }
               />
+              <div className="search_result" style={!searchInput ? {display:"none"} : {display:"flex"}}>
+                {
+                  history.map((data,idx)=>{
+                    if(!searchInput){
+                      return ;
+                    }
+                    return <a href={data.show.url} key={idx} target="_blank" className="search_suggestion_line">
+                      {data.show.name}
+              </a>
+                  })
+                }
+                   
+              </div>
               <GiHamburgerMenu
                 className="hamburgerBtn"
                 onClick={() => toggleHamburgerMenu()}
               />
-            </div>
+            </form>
           </div>
         </div>
         <div className="centerNav">

@@ -185,3 +185,16 @@
   background-color: rgb(197, 189, 189);
   width: 100%;
 }
+
+.search_result{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 75px;
+  left: 73px;
+  padding: 10px;
+  width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 10px;
+
+}

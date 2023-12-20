@@ -10,6 +10,8 @@ function AddedPostPop({ isPostPopAdded, setIsPostPopAdded}) {
     setCaption,
     onSubmitPostHandler,
     fileSelectHandler,
+    image,
+    setImage
     // fileUploadHandler,
   } = useContext(PostContext);
   const inputRef = useRef(null);
@@ -17,6 +19,7 @@ function AddedPostPop({ isPostPopAdded, setIsPostPopAdded}) {
     inputRef.current.click();
   };
 
+  
   return (
     <div
       className="addedPostPopContainer"
@@ -56,8 +59,9 @@ function AddedPostPop({ isPostPopAdded, setIsPostPopAdded}) {
         <input
           type="file"
           ref={inputRef}
-          onChange={(e)=>fileSelectHandler(e)}
-          style={{ display: "none" }}
+          onChange={(e)=>{
+            fileSelectHandler(e)
+          }}
         />
       </form>
     </div>

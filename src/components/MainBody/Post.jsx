@@ -7,7 +7,7 @@ function Post() {
   const { posts ,handleDeletePost,image} = useContext(PostContext);
   return (
     <>
-        {posts.map((post, idx) => {
+        {posts.map((post, idx ) => {
           return <div key={post.keyId} className="mainPostContainer">
               <div className="topMainpost">
                 <div className="mainPostLeft">
@@ -27,7 +27,7 @@ function Post() {
                   <RxCross2 className="mainPostRightIcon"  onClick={() =>handleDeletePost(post.keyId)}/>
                 </div>
               </div>
-                {image ? (<img src={URL.createObjectURL(image)} alt="Image for post "  className="postImage"/>):(<p></p>)}
+                {post.image?<img src={URL.createObjectURL(post.image)} alt="Image for post "  className="postImage"/>:<></>}
             </div>
         })}
         
